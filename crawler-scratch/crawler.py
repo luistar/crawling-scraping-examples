@@ -43,6 +43,9 @@ class BasicCrawler:
             self.current_page_counter = self.current_page_counter + 1
         return
 
+    """
+    Checks whether processing the given url is allowed by the robots.txt policy
+    """
     def is_processing_allowed_by_robots_txt(self, link):
         if not self.ignore_robots_txt:
             robots_policy = self.get_robots_exclusion_policy(link)
@@ -50,6 +53,11 @@ class BasicCrawler:
         else:
             return True
 
+    """
+    Gets the robots.txt policy for the given url.
+    
+    The self.robots_policies_dict acts as a cache to avoid fetching the same robots.txt file multiple times.
+    """
     def get_robots_exclusion_policy(self, url):
         robots_url = urljoin(url, "/robots.txt")
         if robots_url not in self.robots_policies_dict:
@@ -60,6 +68,13 @@ class BasicCrawler:
 
         return self.robots_policies_dict.get(robots_url)
 
+    """
+    Takes as input a list of urls and filters it according to the allowed domains and robots.txt policies.
+    The resulting urls that have not already been visted nor are already in the frontier are then appended to the url 
+    frontier queue.
+    
+    @:param links a list of urls to filter and append to the frontiers queue 
+    """
     def filter_and_append_links(self, links):
         for link in links:
             # skip if link points to non-allowed domain
@@ -78,6 +93,9 @@ class BasicCrawler:
                 logging.debug(f"Appending to frontier: {link}")
                 self.frontier.append(link)
 
+    """
+    Takes as input a url and a html string and yields a sequence of outgoing (absolute) links.
+    """
     def parse_links(self, url, html):
         document = BeautifulSoup(html, 'html.parser')
         for link in document.find_all('a'):
@@ -86,6 +104,9 @@ class BasicCrawler:
                 path = urljoin(url, path)
             yield path
 
+    """
+    Starts the crawling process.
+    """
     def start(self):
         while self.frontier:
             url = self.frontier.pop(0)
@@ -94,8 +115,7 @@ class BasicCrawler:
                 self.explore(url)
             except Exception as e:
                 logging.exception(f"Failed to explore {url}: {e}")
-            finally:
-                self.visited_urls.append(url)
+
         logging.info("Crawl complete.")
 
 
@@ -104,3 +124,4 @@ if __name__ == '__main__':
                  allowed_domains=["localhost:1313"],
                  ignore_robots_txt=False
                  ).start()
+
