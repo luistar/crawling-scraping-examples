@@ -1,0 +1,15 @@
+[
+{"id": 0, "title": "ADAS Testing in Co-Simulation: Towards a Meta-Model for Defining Test Scenarios", "href": "https://luistar.github.io/talks/2023-amost/"},
+{"id": 1, "title": "E2E-Loader: A Framework to Support Performance Testing of Web Applications", "href": "https://luistar.github.io/talks/2023-icst/"},
+{"id": 2, "title": "Spatio-temporal Data Analytics with KNIME", "href": "https://luistar.github.io/talks/2023-ucd/"},
+{"id": 3, "title": "A Neural-embedding-based Recommender System to Get the Most out of EV Recharge Times", "href": "https://luistar.github.io/talks/2023-esars/"},
+{"id": 4, "title": "ReCover: a Curated Dataset for Regression Testing Research", "href": "https://luistar.github.io/talks/2022-msr-recover/"},
+{"id": 5, "title": "Web Application Testing: Using Tree Kernels to Detect Near-duplicate States in Automated Model Inference", "href": "https://luistar.github.io/talks/2021-esem-web-app-testing-using-tree-kernels/"},
+{"id": 6, "title": "Expressing structural temporal properties of safety critical hierarchical systems", "href": "https://luistar.github.io/talks/2021-quatic-expressing-temporal-structural-props/"},
+{"id": 7, "title": "Vehicular Crowd-Sensing on Complex Urban Road Networks: a Case Study in the City of Porto", "href": "https://luistar.github.io/talks/2021-ewgt-vcs-complex-road-networks/"},
+{"id": 8, "title": "Detecting Near-duplicate States in Web Application Model Inference: a Tree Kernel-based Approach", "href": "https://luistar.github.io/talks/2021-ecoop-issta-ds/"},
+{"id": 9, "title": "Inspecting Code Churns to Prioritize Test Cases", "href": "https://luistar.github.io/talks/2020-ictss-inspecting-code-churns/"},
+{"id": 10, "title": "Model Checking for Autonomous Vehicles (NuSMV demo)", "href": "https://luistar.github.io/talks/2020-model-checking-autonomous-vehicles-nusmv/"},
+{"id": 11, "title": "An Introduction to Cloud Computing and Amazon Web Services", "href": "https://luistar.github.io/talks/2019-an-intro-to-cloud-computing-and-aws-fs-mobility-academy/"},
+{"id": 12, "title": "Getting to know the ", "href": "https://luistar.github.io/talks/2018-getting-to-know-aws/"}
+]
